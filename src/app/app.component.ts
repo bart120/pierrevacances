@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Pierre & Vacances';
-  user: any = null;
+  user: any = {};
+
+  logout(): void {
+    this.user = null;
+  }
 }

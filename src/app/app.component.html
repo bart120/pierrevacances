@@ -28,8 +28,24 @@
     </ng-container>
     <ng-template #log>
       Bonjour
-
+      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+        <mat-icon class="mat-18">more_vert</mat-icon>
+      </button>
     </ng-template>
-    <mat-menu></mat-menu>
+    <mat-menu #appMenu="matMenu">
+      <a mat-menu-item>
+        <mat-icon class="mat-18">personne</mat-icon>
+        Mon compte
+      </a>
+      <button mat-menu-item (click)="logout();">
+        <mat-icon class="mat-18">locked_in</mat-icon>
+        Déconnexion
+      </button>
+    </mat-menu>
   </div>
 </mat-toolbar>
+
+
+<footer>
+  <app-room-top-five></app-room-top-five>
+</footer>
