@@ -3,7 +3,7 @@
 <table mat-table #table [dataSource]="rooms">
     <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef> Nom </th>
-        <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+        <td mat-cell *matCellDef="let row"> {{row.name | uppercase}} </td>
     </ng-container>
     <ng-container matColumnDef="price">
         <th mat-header-cell *matHeaderCellDef> Prix </th>
@@ -12,7 +12,7 @@
     <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef> Action </th>
         <td mat-cell *matCellDef="let row">
-            <a mat-button>
+            <a mat-button [routerLink]="['/rooms/detail', row.id]">
                 <mat-icon class="mat-18">search</mat-icon>
             </a>
         </td>
@@ -20,3 +20,7 @@
     <tr mat-header-row *matHeaderRowDef="cols"></tr>
     <tr mat-row *matRowDef="let row; columns: cols;"></tr>
 </table>
+
+<div>
+    {{rooms|json}}
+</div>

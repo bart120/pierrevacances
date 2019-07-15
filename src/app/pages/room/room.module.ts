@@ -6,6 +6,7 @@ import { RoomCreateComponent } from './room-create/room-create.component';
 import { RoomListComponent } from './room-list/room-list.component';
 import { RoomDetailComponent } from './room-detail/room-detail.component';
 import { RoomService } from 'src/app/services/room.service';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RoomService } from 'src/app/services/room.service';
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule
   ],
   exports: [
     RoomTopFiveComponent
