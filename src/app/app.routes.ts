@@ -4,6 +4,7 @@ import { RoomListComponent } from './pages/room/room-list/room-list.component';
 import { HomeComponent } from './pages/home/home/home.component';
 import { NotFoundComponent } from './pages/home/not-found/not-found.component';
 import { RoomDetailComponent } from './pages/room/room-detail/room-detail.component';
+import { AuthenticationModule } from './pages/authentication/authentication.module';
 
 export const ROUTES: Routes = [
     /*{ path: 'rooms', component: RoomListComponent },
@@ -15,6 +16,8 @@ export const ROUTES: Routes = [
             { path: 'detail/:id', component: RoomDetailComponent }
         ]
     },
+
+    { path: 'auth', loadChildren: () => AuthenticationModule },
 
     { path: 'home', component: HomeComponent },
     { path: 'notfound', component: NotFoundComponent },
