@@ -1,1 +1,29 @@
-<p>login works!</p>
+<h1>Authentification</h1>
+
+<form novalidate class="form">
+    <mat-form-field>
+        <input type="email" matInput placeholder="Login" #email (keyup.enter)="password.focus()" />
+    </mat-form-field>
+    <mat-form-field>
+        <input type="password" matInput placeholder="Mot de passe" #password (keyup.enter)="onLogin(email.value)" />
+    </mat-form-field>
+    <div>
+        <button #btn type="button" mat-button (click)="onLogin(email.value)">Se connecter</button>
+    </div>
+</form>
+<br />
+<br />
+<form novalidate class="form" #formLogin="ngForm" (ngSubmit)="onSubmit(formLogin)">
+    <mat-form-field>
+        <input [(ngModel)]="user.email" name="email" type="email" matInput placeholder="Login" required />
+        <mat-error>Login obligatoire</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input [(ngModel)]="user.password" name="password" type="password" matInput placeholder="Mot de passe"
+            required />
+        <mat-error>Mot de passe obligatoire</mat-error>
+    </mat-form-field>
+    <div>
+        <button #btn type="submit" mat-button>Se connecter</button>
+    </div>
+</form>
