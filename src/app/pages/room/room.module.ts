@@ -4,12 +4,14 @@ import { RoomTopFiveComponent } from './room-top-five/room-top-five.component';
 import { MaterialModule } from 'src/app/material.module';
 import { RoomCreateComponent } from './room-create/room-create.component';
 import { RoomListComponent } from './room-list/room-list.component';
+import { RoomDetailComponent } from './room-detail/room-detail.component';
 
 @NgModule({
   declarations: [
     RoomTopFiveComponent,
     RoomCreateComponent,
-    RoomListComponent
+    RoomListComponent,
+    RoomDetailComponent
   ],
   imports: [
     CommonModule,

@@ -2,15 +2,15 @@
   <div>
     <span>{{title}}</span>
     <span [textContent]="title"></span>
-    <a href="" mat-button>
+    <a [routerLink]="['/home']" mat-button>
       <mat-icon>home</mat-icon>
       Accueil
     </a>
-    <a href="" mat-button>
+    <a [routerLink]="['/rooms']" mat-button>
       <mat-icon>room</mat-icon>
       Salles
     </a>
-    <a href="" mat-button>
+    <a routerLink="/rooms/create" mat-button>
       <mat-icon>add</mat-icon>
       Ajouter
     </a>
@@ -45,6 +45,7 @@
   </div>
 </mat-toolbar>
 
+<router-outlet></router-outlet>
 
 <footer>
   <app-room-top-five></app-room-top-five>
