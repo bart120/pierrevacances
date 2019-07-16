@@ -37,4 +37,20 @@ export class RoomService {
     getAllRooms(): Observable<Array<RoomModel>> {
         return this.http.get<Array<RoomModel>>(environment.urlRooms);
     }
+
+    getRoomById(id: number): Observable<RoomModel> {
+        return this.http.get<RoomModel>(`${environment.urlRooms}/${id}`);
+    }
+
+    insert(room: RoomModel): Observable<RoomModel> {
+        return this.http.post<RoomModel>(environment.urlRooms, room);
+    }
+
+    update(room: RoomModel): Observable<RoomModel> {
+        return this.http.put<RoomModel>(`${environment.urlRooms}/${room.id}`, room);
+    }
+
+    delete(id: number): Observable<RoomModel> {
+        return this.http.delete<RoomModel>(`${environment.urlRooms}/${id}`);
+    }
 }

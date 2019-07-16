@@ -1,1 +1,22 @@
-<p>room-create works!</p>
+<h3>Ajouter un salle</h3>
+
+<form class="form" [formGroup]="formRoom" novalidate (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <input matInput type="text" placeholder="Nom" formControlName="name" />
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="text" placeholder="Prix" formControlName="price" />
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="number" placeholder="Places" formControlName="seatCount" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select placeholder="Image" formControlName="image">
+            <mat-option *ngFor="let p of pictures" [value]="p.id">{{p.image}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div>
+        <button mat-button type="submit">Enregistrer</button>
+    </div>
+</form>
