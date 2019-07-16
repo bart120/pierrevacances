@@ -5,12 +5,20 @@ import {
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AuthService } from '../services/auth.service';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
-    constructor(private snack: MatSnackBar) { }
+    private user;
+    constructor(private snack: MatSnackBar, private auth: AuthService) {
+        this.auth.user.subscribe(data => this.user = data);
+    }
 
     intercept(req: HttpRequest<any>, next: HttpHandler) {
+        if (this.user == null) {
+
+        }
+
         req = req.clone({
             setHeaders: { 'Content-Type': 'application/json' }
         });
